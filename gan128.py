@@ -323,8 +323,6 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 #
 def save_samples(index, latent_tensors, show=True):
 	fake_images = generator(latent_tensors)
-	print("FAKE: %d" %(len(fake_images)))
-	print(fake_images.shape)
 	fake_fname = 'generated-images-{0:0=6d}.png'.format(index)
 	save_image(denormalize(fake_images[0:9]), os.path.join(OUTPUT_DIR, fake_fname), nrow=3)
 	print('Saving', fake_fname)
